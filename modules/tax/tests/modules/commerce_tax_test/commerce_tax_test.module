@@ -1,0 +1,17 @@
+<?php
+
+/**
+ * @file
+ * Test module for Tax.
+ */
+
+/**
+ * Implements hook_commerce_tax_type_info_alter().
+ *
+ * Alters tax type plugin definition label.
+ */
+function commerce_tax_test_commerce_tax_type_info_alter(&$info) {
+  if (isset($info['european_union_vat']['label'])) {
+    $info['european_union_vat']['label'] = $info['european_union_vat']['label'] . ' (altered)';
+  }
+}
